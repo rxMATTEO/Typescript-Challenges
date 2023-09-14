@@ -4,7 +4,11 @@
     "target": "ESNext",
     "sourceMap": true,
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "lib": ["ES6", "ESNext"],
+    "types": ["node"],
+    "esModuleInterop": true,
+    "moduleDetection": "force"
   },
   "exclude": [
     "node_modules"

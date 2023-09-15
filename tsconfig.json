@@ -5,7 +5,7 @@
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
-    "lib": ["ES6", "ESNext"],
+    "lib": ["ES6", "ESNext", "DOM", "ESNext.Promise"],
     "types": ["node"],
     "esModuleInterop": true,
     "moduleDetection": "force"

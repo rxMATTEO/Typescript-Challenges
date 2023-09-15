@@ -4,9 +4,8 @@ const promise3 = new Promise<string>((resolve, reject) => {
   setTimeout(resolve, 100, 'foo');
 });
 
-declare function PromiseAll<T extends any[]>(values: readonly [...T]):
-  Promise<{ [K in keyof T]: T[K] extends Promise<infer R> ? R : T[K] }>;
-
-// expected to be `Promise<[number, 42, string]>`
+declare function PromiseAll<T extends readonly any[]>(...params: T): Promise<{
+  [k in keyof T]: T[k] extends Promise<infer E> ? E: T[k]
+}>
 const p = PromiseAll([promise1, promise2, promise3] as const)
 const v = [promise1, promise2, promise3] as const;
